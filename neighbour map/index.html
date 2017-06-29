@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    </head>
+    <body >
+        <div class="container">
+            <div class="side-bar">
+                <center>
+                    <h2>Chandigarh De Nazaare</h2>
+                </center>
+                <div id="error" data-bind="text: error, visible: showError"></div>
+                <br>
+                <input id="show" type="button" value="Show" data-bind="click: show">
+                <input id="hide" type="button" value="Hide" data-bind="click: hide">
+                <br>
+                <center>
+                    <h3>List</h3>
+                </center>
+                <input type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"><br>
+                <div id="list">
+                    <ul data-bind="foreach: list">
+                        <li id="list-item" data-bind="text: title,click: hmarker"></li>
+                    </ul>
+                </div>
+                <div data-bind="visible: showMyList">
+                    <ul data-bind="foreach: locations">
+                        <li data-bind="text: title,click: hmarker"></li>
+                    </ul>
+                </div>
+                <br>
+            </div>
+            <section>
+                <div id="map"></div>
+            </section>
+        </div>
+        <script src="js/lib/knockout-3.2.0.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="js/app.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC3EipbuQMNreow2TQ4zNWTTvNACOMRok&v=3&callback=initMap" onerror="mapErrorHandling()" ></script>
+    </body>
+</html>
